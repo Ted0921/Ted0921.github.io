@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer Book</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page" id="page">
+        <header class="page__header">
+            <a class="page__home" href="../index.html">← Home</a>
+            <h1 class="page__title">Answer Book</h1>
+            <p class="page__subtitle">Ask a question, reveal a thoughtful answer, and share it with friends.</p>
+        </header>
+
+        <form class="question" id="questionForm" novalidate>
+            <label class="question__label" for="questionInput">Your question (optional)</label>
+            <input
+                id="questionInput"
+                class="question__input"
+                type="text"
+                name="question"
+                placeholder="What would you like to know?"
+                autocomplete="off"
+                spellcheck="true"
+                aria-describedby="hint"
+            >
+        </form>
+
+        <div class="actions">
+            <button class="button button--primary" type="button" id="revealButton" disabled>Reveal</button>
+            <button class="button" type="button" id="shareButton" disabled>Share</button>
+            <button class="button" type="button" id="copyButton" disabled>Copy link</button>
+        </div>
+
+        <section class="answer" id="answerCard" aria-live="polite">
+            <p class="answer__placeholder" id="answerPlaceholder">Type a question and tap Reveal to see your answer.</p>
+            <p class="answer__question" id="questionOutput" hidden></p>
+            <p class="answer__text" id="answerText" hidden></p>
+        </section>
+
+        <p class="hint" id="hint">Press the space bar to reveal an answer instantly.</p>
+        <p class="status" id="status" role="status" hidden></p>
+    </main>
+
+    <noscript>
+        <p class="noscript">JavaScript is required to use the Answer Book. Please enable it and reload the page.</p>
+    </noscript>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
